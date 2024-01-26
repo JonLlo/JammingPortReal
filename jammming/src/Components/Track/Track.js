@@ -5,9 +5,9 @@ import './Track.css';
 
 
 
-function Track() {
-
-  const renderAction = () => {
+class Track extends React.Component  {
+  
+  renderAction() {
 
     if (this.props.isRemoval) {
       return <button className="Track-action">-</button>;
@@ -15,20 +15,19 @@ function Track() {
       return <button className="Track-action">+</button>;
     }
   };
-
-
-
-  return (
-
-<div className="Track">
-  <div className="Track-information">
-    <h3>{this.props.track.name}</h3>
-    <p>//-- track artist will go here -- track album will go here </p>
-  </div>
-  //button class="Track-action"-- + or - will go here --/button
-  {renderAction}
-</div>
+  
+  render() {
+    return (
+      <div className="Track">
+        <div className="Track-information">
+          <h3>track name</h3>
+          <p>track artist | track album </p>
+        </div>
+        {this.renderAction}
+      </div>
   );
-}
+}}
 
 export default Track;
+
+
